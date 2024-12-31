@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http - equiv="Cache - Control" content="no - cache, no - store, must - revalidate"/>
+    <meta http - equiv="Pragma" content="no - cache"/>
+    <meta http - equiv="Expires" content="0"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Title</title>
+<!--    <style>-->
+<!--        .div1{-->
+<!--            height: 800px;-->
+<!--        }-->
+<!--        .S1 {-->
+<!--            width: 300px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 20px;-->
+<!--            background-color: #f9f9f9;-->
+<!--        }-->
+<!--        label {-->
+<!--            margin-bottom: 5px; /* 给标签添加底部外边距，让其与输入框有一定间隔 */-->
+<!--        }-->
+<!--        .input1{-->
+<!--            margin-top: 5px;-->
+<!--        margin-left: 50px}-->
+<!--    </style>-->
+</head>
+<body>
+
+<div class="div1" style="align-content: center" >
+    <form id="form" class="S1">
+        <label for="name">账户</label>     <input id="name" type="text" name="name"><br>
+        <label for="password">密码</label>     <input id="password" type="password" name="password"><br>
+        <input  type="submit" value="注册">
+        <input  type="submit" onclick="denglu()" value="登录">
+    </form>
+
+</div>
+
+
+
+
+
+
+</body>
+<script>
+    function denglu() {
+        console.log($(this).serialize());
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:8080/denglu',
+            data: $(this).serialize(),
+            success: function (response) {
+
+                console.log(response);
+            }
+        });
+    }
+    // $('#form').submit(function (e) {
+    //     console.log($(this).serialize());
+    //     e.preventDefault();
+    //     $.ajax({
+    //         type: 'get',
+    //         url: 'http://localhost:8080/denglu',
+    //         data: $(this).serialize(),
+    //         success: function (response) {
+    //             // var newDocument = document.open('text/html', 'replace');
+    //             // newDocument.write(response);
+    //             // newDocument.close();
+    //             console.log(response);
+    //         }
+    //     });
+    // })
+</script>
+</html>

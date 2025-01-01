@@ -2,22 +2,61 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta http - equiv="Cache - Control" content="no - cache, no - store, must - revalidate"/>
+    <meta http - equiv="Pragma" content="no - cache"/>
+    <meta http - equiv="Expires" content="0"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Title</title>
+    <!--    <style>-->
+    <!--        .div1{-->
+    <!--            height: 800px;-->
+    <!--        }-->
+    <!--        .S1 {-->
+    <!--            width: 300px;-->
+    <!--            margin: 0 auto;-->
+    <!--            padding: 20px;-->
+    <!--            background-color: #f9f9f9;-->
+    <!--        }-->
+    <!--        label {-->
+    <!--            margin-bottom: 5px; /* 给标签添加底部外边距，让其与输入框有一定间隔 */-->
+    <!--        }-->
+    <!--        .input1{-->
+    <!--            margin-top: 5px;-->
+    <!--        margin-left: 50px}-->
+    <!--    </style>-->
 </head>
 <body>
-<p>156465456465</p>
-<div>
-    <form id="form" method="POST" enctype="multipart/form-data" >
-        <input  type="text"  name="ssssss" style="width:300px">
-        <!--    <a href="http://localhost:8080/daochu" class="easyui-linkbutton" plain="true">导出</a>-->
-        <!--    <a href="http://localhost:8080/xiazaimuban" class="easyui-linkbutton" plain="true">下载模板</a>-->
-<!--        <a href="http://localhost:8080/xiazaimuban" class="easyui-linkbutton" iconCls="icon-ok">下载模板</a>-->
 
-<!--        <a href="http://localhost:8080/daochu"  class="easyui-linkbutton" iconCls="icon-back">导出</a>-->
+<div class="div1" style="align-content: center" >
+    <form id="form" class="S1">
+        <label for="name">账户</label>     <input id="name" type="text" name="name"><br>
+        <label for="password">密码</label>     <input id="password" type="password" name="password"><br>
+        <input  type="submit" onclick="zhuce()" value="注册">
+
     </form>
 
-
 </div>
-<a href="http://localhost:8080/login/zhuce" >zhuce</a>
+
+
+
+
+
+
 </body>
+<script>
+    function zhuce() {
+        console.log($(this).serialize());
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:8080/zhuce',
+            data: $(this).serialize(),
+            success: function (response) {
+
+                console.log(response);
+            }
+        });
+    }
+
+
+</script>
 </html>

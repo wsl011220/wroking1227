@@ -52,10 +52,10 @@ public class DengLucontroller {
                   }
     };
 
-@GetMapping("/zhuye")
+@GetMapping("/zhuce")
 public String zhuye() {
     System.out.println("44");
-    return "zhuye.html";
+    return "zhuce.html";
          }
 
 };

@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 public interface DengluService {
-//    ZhangHao findbyid(Integer id) ;
+
     ZhangHao dengLu(String name) ;
+    ZhangHao  zhuce(ZhangHao zhangHao);
 
 }

@@ -19,4 +19,9 @@ public class DengluServiceImpl implements DengluService {
         return zhangHaoDao.findAll(name);
 
     }
+
+    @Override
+    public ZhangHao zhuce(ZhangHao zhangHao) {
+        return null;
+    }
 }
